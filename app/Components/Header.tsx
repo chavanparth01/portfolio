@@ -40,7 +40,7 @@ export default function Header() {
                 href={link.hash}
                 onClick={() => {
                   setActiveSection(link.name);
-                  sound ? playSound("/Sounds/nav.wav") : null
+                  if(sound) playSound("/Sounds/nav.wav");
                 }}
               >
                 {link.name}

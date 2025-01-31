@@ -62,7 +62,7 @@ export default function Intro() {
                     duration: 0.5
                 }}
             >
-                <span className="font-bold">Hello, I'm Parth Chavan.</span> I'm a{" "}
+                <span className="font-bold">Hello, I&apos;m Parth Chavan.</span> I&apos;m a{" "}
                 <span className="font-bold">Frontend-Developer</span> with{" "}
                 <span className="font-bold">2 years</span> of experience. I enjoy
                 building <span className="italic">web-sites</span> and  <span className="italic">creating interactive ,</span> <span className="italic">user-friendly interfaces</span>. My major focus is : {" "}

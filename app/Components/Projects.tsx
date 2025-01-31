@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards"
 import useSectionInView from "../lib/Hooks/Hooks";
-import SectionHeading from "./SectionHeading";
 import { useTheme } from "../Context/ThemeContextProvider";
 
 const testimonials = [
@@ -57,7 +56,9 @@ export default function MovingCards() {
 
     type TypeOfSpeed = "normal" | "fast" | "slow" | undefined;
     const [speed, setSpeed] = useState<TypeOfSpeed>("normal");
+    setSpeed("normal");
     const [key, setKey] = useState(0); 
+    setKey(0);
 
     return (
         <>
