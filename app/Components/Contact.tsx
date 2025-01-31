@@ -8,6 +8,8 @@ import { Textarea } from "./ui/textarea";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { useSound } from "../Context/SoundContext";
 import playSound from "../utils/playSound";
+import SectionHeading from "./SectionHeading";
+import useSectionInView from "../lib/Hooks/Hooks";
 
 export function Contact() {
     interface ContactType {
@@ -59,8 +61,14 @@ export function Contact() {
     }, [formData]);
 
     const { sound } = useSound();
+    const ref = useSectionInView("Contact" , 0.5)
     return (
-        <div className="relative max-w-lg min-h-[30rem] w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+        <>
+        <SectionHeading>
+            Contact Me Here
+        </SectionHeading>
+
+        <div ref = { ref } className="relative max-w-lg min-h-[30rem] w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-[#1f1f1f]">
             <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
                 Hope You Liked the Website 😅!
             </h2>
@@ -131,6 +139,7 @@ export function Contact() {
                 </p>
             )}
         </div>
+        </>
     );
 }
 

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export default function SectionDividerContact() {
   return (
     <motion.div
-      id = "about"
+      id = "contact"
       className="bg-gray-300 my-24 h-16 w-[2px] rounded-full hidden sm:block"
       initial = {{opacity: 0, y: 100}}
       animate = {{opacity: 1, y: 0}}

@@ -15,11 +15,15 @@ import Footer from "./Components/Footer";
 export const metadata: Metadata = {
   title: "Parth Chavan | Portfolio",
   description: "Parth Chavan is a Frontend developer with 2 years of experience",
+  icons : {
+    icon : "/portfolio.png",
+
+  }
 };
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
+    <main className={`flex flex-col items-center px-4 `}>
         <Intro/>
         <SectionDivider/>
         <About/>

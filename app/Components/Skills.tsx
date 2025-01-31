@@ -4,6 +4,7 @@ import React from 'react';
 import { skillsData } from '../lib/data';
 import { motion } from 'framer-motion';
 import useSectionInView from '../lib/Hooks/Hooks';
+import SectionHeading from './SectionHeading';
 
 export default function Skills() {
     const ref = useSectionInView("Skills", 0.5);
@@ -52,7 +53,7 @@ export default function Skills() {
             {skillsData.map((skill, idx) => (
                 <motion.div
                     key={idx}
-                    className="p-3 m-4 bg-white text-gray-400 text-center shadow-lg rounded-2xl"
+                    className="p-3 m-4 bg-white text-gray-400 text-center shadow-lg rounded-2xl dark:bg-gray-900 dark:text-gray-200 dark:shadow-white"
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{
@@ -70,9 +71,9 @@ export default function Skills() {
 
     return (
         <div ref={ref}>
-            <div className="text-center text-3xl text-gray-700 font-extrabold font-mono mb-8">
+            <SectionHeading>
                 My Skills
-            </div>
+            </SectionHeading>
             {component}
         </div>
     );

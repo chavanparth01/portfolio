@@ -1,5 +1,4 @@
 'use client'
-
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -18,7 +17,7 @@ export default function Intro() {
     const { sound } = useSound();
 
     return (
-        <section ref={ref} className='mb-28 max-w-[50rem] text-center sm:mb-0'>
+        <section ref={ref} className={`mb-28 max-w-[50rem] text-center sm:mb-0`}>
             <div className='relative flex items-center justify-center'>
                 <motion.div
                     initial={{ opacity: 0, scale: 0 }}
@@ -68,16 +67,16 @@ export default function Intro() {
                 <span className="font-bold">2 years</span> of experience. I enjoy
                 building <span className="italic">web-sites</span> and  <span className="italic">creating interactive ,</span> <span className="italic">user-friendly interfaces</span>. My major focus is : {" "}
                 <div className="underline text-gray-500 font-bold flex gap-5 justify-center">
-                    <LinkPreview url="https://react.dev/learn" className="font-bold !text-black">
+                    <LinkPreview url="https://react.dev/learn" className="font-bold !text-black dark:!text-white">
                         React
                     </LinkPreview>{" "}
-                    <LinkPreview url="https://nextjs.org/docs" className="font-bold !text-black">
+                    <LinkPreview url="https://nextjs.org/docs" className="font-bold !text-black dark:!text-white">
                         Next.js
                     </LinkPreview>
-                    <LinkPreview url="https://tailwindcss.com" className="font-bold !text-black">
+                    <LinkPreview url="https://tailwindcss.com" className="font-bold !text-black dark:!text-white">
                         Tailwind Css
                     </LinkPreview>
-                    <LinkPreview url="https://framer.com/motion" className="font-bold !text-black">
+                    <LinkPreview url="https://framer.com/motion" className="font-bold !text-black dark:!text-white">
                         Framer Motion
                     </LinkPreview>
                 </div>
@@ -116,7 +115,7 @@ export default function Intro() {
                 >
                     <BsLinkedin />
                 </a>
-                <a href="https://github.com/ParthChavan2527/"
+                <a href="https://github.com/chavanparth/"
                     target="_blank"
                     className='bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full text-[1.5rem] hover:scale-110  active:scale-95 transition ease-in duration: 150 outline-none border border-black/20'
                     onClick={ () => sound ? playSound("/Sounds/clicksound2.wav") : null } 
@@ -124,7 +123,6 @@ export default function Intro() {
                     <FaGithubSquare />
                 </a>
             </motion.div>
-
         </section>
     )
 }

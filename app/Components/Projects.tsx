@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards"
 import useSectionInView from "../lib/Hooks/Hooks";
-import Experience from "./Experience";
 import SectionHeading from "./SectionHeading";
+import { useTheme } from "../Context/ThemeContextProvider";
 
 const testimonials = [
     {
@@ -51,25 +51,31 @@ const testimonials = [
 
 export default function MovingCards() {
 
+    const { isDark } = useTheme();
+
     const ref = useSectionInView("Projects" , 0.5)
 
     type TypeOfSpeed = "normal" | "fast" | "slow" | undefined;
     const [speed, setSpeed] = useState<TypeOfSpeed>("normal");
     const [key, setKey] = useState(0); 
 
-    // const handleSpeed = (newSpeed: TypeOfSpeed) => {
-    //     setSpeed(newSpeed);
-    //     console.log(`speed changed to ${newSpeed}`);
-    //     setKey(key+1);
-    // }
-
     return (
         <>
-            <div ref = {ref} className="min-h-[40rem] mt-10 mb-10 rounded-md flex flex-col antialiased bg-slate-50  dark:bg-grid-white/[0.3] items-center justify-center relative"
+           <div ref = {ref} className="min-h-[55rem] max-w-24rem sm:max-w-full rounded-md flex flex-col antialiased bg-slate-50 dark:bg-black dark:bg-grid-white/[0.3] items-center justify-center relative overflow-hidden"
+            // style={{
+            //     WebkitMaskImage:
+            //       "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+            //     maskImage: "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+            //     WebkitMaskRepeat: "no-repeat",
+            //     maskRepeat: "no-repeat",
+            //   }}
             >
-                <SectionHeading>
+                
+            { isDark && <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>}
+
+                <div className="text-4xl font-mono text-center font-black text-gray-700 my-16 dark:bg-black dark:text-white dark:bg-fading-grid">
                     Take A look At my Projects
-                </SectionHeading>
+                </div>
 
                 <InfiniteMovingCards
                     key = {key}

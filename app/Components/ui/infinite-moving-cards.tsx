@@ -61,7 +61,7 @@ export const InfiniteMovingCards = ({
 
   return (
     <div
-      className={`scroller relative z-20 max-w-7xl overflow-hidden bg-slate-50 [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] ${className}`}
+      className={`scroller relative z-20 max-w-7xl overflow-hidden bg-slate-50 dark:bg-black [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] ${className}`}
     >
       <ul
         className = {`flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap h-[35rem] animate-scroll ${pauseOnHover && "hover:[animation-play-state:paused]"}`}
