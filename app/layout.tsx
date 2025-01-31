@@ -20,7 +20,7 @@ export default function RootLayout({
   const pathName = usePathname();
   const isHome = pathName === '/';
 
-  const [loading , setLoading] = useState(false);
+  const [loading , setLoading] = useState(isHome);
 
   useEffect(() => {
     if (isHome) {
@@ -40,7 +40,7 @@ export default function RootLayout({
         <div className="bg-[#fbe2e3] h-[31.25rem] w-[31.25rem] absolute top-[-6rem] right-[1rem] -z-10 rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
 
         <div className="bg-[#dbd7fb] h-[31.25rem] w-[50rem] absolute top-[-1rem] left-[-35rem] -z-10 rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left[-15rem] dark:bg-[#676394]"></div>
-        {/* { loading && isHome ? <Preloader /> :  */}
+        { loading && isHome ? <Preloader /> : 
 
           <SoundContextProvider>
             <ThemeContextProvider>
@@ -52,7 +52,7 @@ export default function RootLayout({
               </ActiveSectionContextProvider> 
             </ThemeContextProvider>
           </SoundContextProvider>
-        {/* } */}
+        }
       </body>
     </html>
   );

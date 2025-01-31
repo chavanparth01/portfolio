@@ -28,6 +28,37 @@ h1 {
   overflow: hidden;
 }
 
+@media (max-width: 400px) {
+  body {
+    height: 650px;
+    width: 384px;
+    overflow: scroll;
+  }
+  
+  h1 {
+    font-size: 5vh;
+  }
+  
+  #cooking {
+    width: 90%;
+    height: 90%;
+  }
+  
+  #cooking .bubble {
+    box-shadow: 0 0 0.2vh #4d4d4d;
+  }
+  
+  #cooking #area {
+    width: 60%;
+    height: 60%;
+  }
+  
+  #cooking #area #sides #pan {
+    width: 55%;
+    height: 7%;
+  }
+}
+
 #cooking .bubble {
   position: absolute;
   border-radius: 100%;

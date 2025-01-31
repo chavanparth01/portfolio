@@ -61,7 +61,7 @@ export default function MovingCards() {
 
     return (
         <>
-           <div ref = {ref} className="min-h-[55rem] max-w-24rem sm:max-w-full rounded-md flex flex-col antialiased bg-slate-50 dark:bg-black dark:bg-grid-white/[0.3] items-center justify-center relative overflow-hidden"
+           <div ref = {ref} className="min-h-[55rem] w-[400px] sm:w-full rounded-md flex flex-col antialiased bg-slate-50 dark:bg-black dark:bg-grid-white/[0.3] items-center justify-center relative overflow-hidden"
             // style={{
             //     WebkitMaskImage:
             //       "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
