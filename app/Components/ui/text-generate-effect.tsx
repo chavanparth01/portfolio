@@ -69,7 +69,7 @@ export const TextGenerateEffect: React.FC<TextGenerateEffectProps> = ({
           {wordsArray.map((word, idx) => (
             <motion.span
               key={`${word}-${idx}`}
-              className="text-gray-800 opacity-0 dark:text-customGray"
+              className="text-gray-800 opacity-0 dark:text-customGray text-4xl"
               style={{ filter: filter ? "blur(10px)" : "none" }}
             >
               {word}{" "}
