@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       <body
-        className={`antialiased bg-slate-50 text-gray-950 ${ loading ? ' ' : 'pt-28 sm:pt-36'} relative dark:!bg-[#121212] dark:!text-gray-50`}
+        className={`!overflow-x-hidden antialiased bg-slate-50 text-gray-950 ${ loading ? ' ' : 'pt-28 sm:pt-36'} relative dark:!bg-[#121212] dark:!text-gray-50`}
       >
         <div className="bg-[#fbe2e3] h-[31.25rem] w-[31.25rem] absolute top-[-6rem] right-[1rem] -z-10 rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
 
