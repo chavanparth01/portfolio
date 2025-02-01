@@ -1,38 +1,45 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-export const TextGenerateEffect = ({
-  words,
-  className,
-  filter = true,
-  duration = 0.5,
-}: {
+type TextGenerateEffectProps = {
   words: string;
   className?: string;
   filter?: boolean;
   duration?: number;
+};
+
+export const TextGenerateEffect: React.FC<TextGenerateEffectProps> = ({
+  words,
+  className,
+  filter = true,
+  duration = 0.5,
 }) => {
   const [scope, animate] = useAnimate();
   const [isInView, setIsInView] = useState(false);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    if (!scope.current) return;
+
+    observerRef.current = new IntersectionObserver(
       (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
+        if (entries[0].isIntersecting) {
           setIsInView(true);
         }
       },
       { threshold: 0.5 }
     );
 
-    observer.observe(scope.current);
-    return () => observer.disconnect();
-  }, [scope.current]);
+    observerRef.current.observe(scope.current);
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, [scope]);
 
   useEffect(() => {
     if (isInView) {
@@ -43,48 +50,32 @@ export const TextGenerateEffect = ({
           filter: filter ? "blur(0px)" : "none",
         },
         {
-          duration: duration ? duration : 1,
+          duration: duration,
           delay: stagger(0.2),
         }
       );
     }
   }, [isInView, animate, filter, duration]);
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className="text-gray-800 opacity-0 dark:text-customGray"
-              style={{
-                filter: filter ? "blur(10px)" : "none",
-              }}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
-
   return (
     <div
       className={cn(
-        "font-bold",
-        className,
-        "overflow-hidden",
-        "border-none",
-        "p-0",
-        "m-0" ,
+        "font-bold overflow-hidden border-none p-0 m-0",
+        className
       )}
     >
-      <div className="mt-4">
-        <div className="text-gray-800 text-3xl leading-snug tracking-wide text-center ">
-          {renderWords()}
-        </div>
+      <div className="mt-4 text-gray-800 text-3xl leading-snug tracking-wide text-center">
+        <motion.div ref={scope}>
+          {wordsArray.map((word, idx) => (
+            <motion.span
+              key={`${word}-${idx}`}
+              className="text-gray-800 opacity-0 dark:text-customGray"
+              style={{ filter: filter ? "blur(10px)" : "none" }}
+            >
+              {word}{" "}
+            </motion.span>
+          ))}
+        </motion.div>
       </div>
     </div>
   );

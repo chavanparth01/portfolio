@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { useSound } from "@/app/Context/SoundContext";
 import playSound from "@/app/utils/playSound";
+import Image from "next/image";
 
 export const InfiniteMovingCards = ({
   items,
@@ -94,8 +94,8 @@ export const InfiniteMovingCards = ({
                 loading="lazy"
                 className="relative w-full h-[17rem] object-cover object-center rounded-lg mb-[1rem]"
               /> */}
-              <img src={item.image} alt={item.name} className="relative w-full h-[17rem] object-cover object-center rounded-lg mb-[1rem]"/>
-              {/* <div className="text-sm text-gray-400 font-normal">{item.name}</div> */}
+              <Image src={item.image} alt={item.name} height ={300} width = {300}  className="relative w-full h-[17rem] object-cover object-center rounded-lg mb-[1rem]"/>
+
               <div className=" text-gray-400 font-extrabold text-xl text-center">{item.title}</div>
               <div className="text-sm text-gray-400 font-normal text-center">{item.about}</div>
               <div className="mt-6 flex justify-center">
@@ -129,15 +129,7 @@ export const InfiniteMovingCards = ({
             onMouseMove={(e) => handleMouseMove(e, idx)}
           >
             <blockquote>
-              {/* <Image
-                src={item.image}
-                alt={item.name}
-                width="100"
-                height="100"
-                quality={100}
-                className="relative w-full h-[17rem] object-cover rounded-lg mb-4"
-              /> */}
-              <img src={item.image} alt={item.name} className="relative w-full h-[17rem] object-cover object-center rounded-lg mb-[1rem]"/>
+              <Image src={item.image} alt={item.name} height = {300} width={300}  className="relative w-full h-[17rem] object-cover object-center rounded-lg mb-[1rem]"/>
               {/* <div className="text-sm text-gray-400 font-normal">{item.name}</div> */}
               <div className=" text-gray-400 font-extrabold text-xl text-center">{item.title}</div>
               <div className="text-sm text-gray-400 font-normal text-center">{item.about}</div>

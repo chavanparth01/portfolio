@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards"
 import useSectionInView from "../lib/Hooks/Hooks";
 import { useTheme } from "../Context/ThemeContextProvider";
@@ -17,7 +17,7 @@ const testimonials = [
         title:
             "Core Blaster",
         about: "An interactive quiz-based learning platform designed to strengthen core CS concepts with gamified experiences.",
-            image: "/core-blaster.png",
+        image: "/core-blaster.png",
         name: "By Parth Chavan",
         link: "https://core-blaster.vercel.app/",
     },
@@ -45,24 +45,18 @@ const testimonials = [
         name: "By Parth Chavan",
         link: "https://www.google.com/",
     },
-    
+
 ];
 
 export default function MovingCards() {
 
     const { isDark } = useTheme();
 
-    const ref = useSectionInView("Projects" , 0.5)
-
-    type TypeOfSpeed = "normal" | "fast" | "slow" | undefined;
-    const [speed, setSpeed] = useState<TypeOfSpeed>("normal");
-    setSpeed("normal");
-    const [key, setKey] = useState(0); 
-    setKey(0);
+    const ref = useSectionInView("Projects", 0.5);
 
     return (
         <>
-           <div ref = {ref} className="min-h-[55rem] w-[400px] sm:w-full rounded-md flex flex-col antialiased bg-slate-50 dark:bg-black dark:bg-grid-white/[0.3] items-center justify-center relative overflow-hidden"
+            <div ref={ref} className="min-h-[55rem] w-[400px] sm:w-full rounded-md flex flex-col antialiased bg-slate-50 dark:bg-black dark:bg-grid-white/[0.3] items-center justify-center relative overflow-hidden"
             // style={{
             //     WebkitMaskImage:
             //       "radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
@@ -71,18 +65,17 @@ export default function MovingCards() {
             //     maskRepeat: "no-repeat",
             //   }}
             >
-                
-            { isDark && <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>}
+
+                {isDark && <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>}
 
                 <div className="text-4xl font-mono text-center font-black text-gray-700 my-16 dark:bg-black dark:text-white dark:bg-fading-grid">
                     Take A look At my Projects
                 </div>
 
                 <InfiniteMovingCards
-                    key = {key}
                     items={testimonials}
                     direction="right"
-                    speed={speed}
+                    speed="normal"
                 />
 
             </div>

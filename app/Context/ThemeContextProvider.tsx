@@ -16,14 +16,16 @@ export default function ThemeContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isDark, setIsDark] = useState(() => {
-    const currMode = localStorage.getItem("mode");
-    return currMode === "dark";
-  });
-
+  const [isDark, setIsDark] = useState(false);
   const { sound } = useSound();
 
-  // Ensure the body class reflects the mode on mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currMode = localStorage.getItem("mode");
+      setIsDark(currMode === "dark");
+    }
+  }, []);
+
   useEffect(() => {
     if (isDark) {
       document.body.classList.add("dark");
@@ -35,7 +37,10 @@ export default function ThemeContextProvider({
   const toggleMode = () => {
     setIsDark((prevMode) => {
       const newMode = !prevMode;
-      localStorage.setItem("mode", newMode ? "dark" : "light");
+
+      if (typeof window !== "undefined") {
+        localStorage.setItem("mode", newMode ? "dark" : "light");
+      }
 
       if (sound) {
         playSound("/Sounds/clicksound2.wav");
