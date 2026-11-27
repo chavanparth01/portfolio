@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios, { AxiosError } from "axios";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
@@ -46,6 +46,7 @@ export function Contact() {
         try {
             const response = await axios.post("/api/send-email", formData);
             setReturnMessage(response.data.message || "Message sent successfully!");
+            setFormData({ name: "", email: "", message: "" });
         } catch (error) {
             const axiosError = error as AxiosError<ErrorResponse>;
             setReturnMessage(
@@ -56,14 +57,10 @@ export function Contact() {
         }
     };
 
-    useEffect(() => {
-        console.log(formData);
-    }, [formData]);
-
     const { sound } = useSound();
     const ref = useSectionInView("Contact" , 0.5)
     return (
-        <>
+        <section id="contact" className="w-full scroll-mt-28">
         <SectionHeading>
             Feel Free To Contact Me Here 😇
         </SectionHeading>
@@ -82,9 +79,11 @@ export function Contact() {
                         <Label htmlFor="firstname">Name</Label>
                         <Input
                             id="firstname"
-                            placeholder="chavan parth"
+                            placeholder="Your name"
                             name="name"
                             type="text"
+                            value={formData.name}
+                            required
                             onChange={handleOnChange}
                         />
                     </LabelInputContainer>
@@ -93,19 +92,24 @@ export function Contact() {
                     <Label htmlFor="email">Email Address</Label>
                     <Input
                         id="email"
-                        placeholder="parth@gmail.com"
+                        placeholder="you@example.com"
                         type="email"
                         name="email"
+                        value={formData.email}
+                        required
                         onChange={handleOnChange}
                     />
                 </LabelInputContainer>
                 <LabelInputContainer className="mb-4">
                     <Label htmlFor="textarea">Message</Label>
                     <Textarea
+                        id="textarea"
                         rows={10}
                         cols={50}
                         placeholder="Write your message here..."
                         name="message"
+                        value={formData.message}
+                        required
                         onChange={handleOnChange}
                     />
                 </LabelInputContainer>
@@ -139,7 +143,7 @@ export function Contact() {
                 </p>
             )}
         </div>
-        </>
+        </section>
     );
 }
 

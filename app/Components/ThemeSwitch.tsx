@@ -11,7 +11,8 @@ export default function ThemeSwitch() {
 
     return (
         <button
-            className="fixed right-4 bottom-4 h-12 w-12 rounded-full bg-white outline-none border border-gray-100 flex items-center justify-center hover:scale-110 active:scale-90 transition-all dark:bg-gray-900"
+            aria-label="Toggle theme"
+            className="fixed top-[5.25rem] right-4 sm:top-6 sm:right-6 z-[999] h-12 w-12 rounded-full bg-white/90 backdrop-blur-[0.5rem] outline-none border border-black/15 shadow-xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all dark:bg-gray-900/90 dark:border-white/20 dark:text-white"
             onClick={toggleMode}
         >
             {isDark === false ?

@@ -17,7 +17,7 @@ export default function Intro() {
     const { sound } = useSound();
 
     return (
-        <section ref={ref} className={`mb-28 max-w-[50rem] text-center sm:mb-0`}>
+        <section id="home" ref={ref} className={`mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-28`}>
             <div className='relative flex items-center justify-center'>
                 <motion.div
                     initial={{ opacity: 0, scale: 0 }}
@@ -63,21 +63,24 @@ export default function Intro() {
                 }}
             >
                 <span className="font-bold">Hello, I&apos;m Parth Chavan.</span> I&apos;m a{" "}
-                <span className="font-bold">Frontend-Developer</span> with{" "}
-                <span className="font-bold">2 years</span> of experience. I enjoy
-                building <span className="italic">web-sites</span> and  <span className="italic">creating interactive ,</span> <span className="italic">user-friendly interfaces</span>. My major focus is : {" "}
-                <div className="underline text-gray-500 font-bold flex gap-5 justify-center">
+                <span className="font-bold">Full-Stack &amp; AI Developer</span> and final-year{" "}
+                <span className="font-bold">IT student at IIIT Allahabad</span>. I enjoy
+                building <span className="italic">scalable web applications</span> and <span className="italic">AI-powered systems</span>. My major focus is :{" "}
+                <div className="underline text-gray-500 font-bold flex flex-wrap gap-5 justify-center">
                     <LinkPreview url="https://react.dev/learn" className="font-bold !text-black dark:!text-white">
                         React
                     </LinkPreview>{" "}
                     <LinkPreview url="https://nextjs.org/docs" className="font-bold !text-black dark:!text-white">
                         Next.js
                     </LinkPreview>
-                    <LinkPreview url="https://tailwindcss.com" className="font-bold !text-black dark:!text-white">
-                        Tailwind Css
+                    <LinkPreview url="https://nodejs.org/en" className="font-bold !text-black dark:!text-white">
+                        Node.js
                     </LinkPreview>
-                    <LinkPreview url="https://framer.com/motion" className="font-bold !text-black dark:!text-white">
-                        Framer Motion
+                    <LinkPreview url="https://www.typescriptlang.org" className="font-bold !text-black dark:!text-white">
+                        TypeScript
+                    </LinkPreview>
+                    <LinkPreview url="https://www.python.org" className="font-bold !text-black dark:!text-white">
+                        Python
                     </LinkPreview>
                 </div>
             </motion.div>
@@ -100,11 +103,13 @@ export default function Intro() {
                         className='group-hover:translate-x-1 transition-transform'
                     />
                 </Link>
-                <a href="/MyResume.pdf"
-                    download={true} className='group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full hover:scale-110  active:scale-95 transition ease-in duration: 150 outline-none border border-black/20
+                <a href="https://drive.google.com/file/d/1WtFcSktd-qk9YC1rWAHm2k8IjilZ-h8c/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full hover:scale-110  active:scale-95 transition ease-in duration: 150 outline-none border border-black/20
                 '
                     onClick={ () => sound ? playSound("/Sounds/clicksound2.wav") : null }
-                >Downlaod CV <HiDownload
+                >Download CV <HiDownload
                         className='group-hover:translate-y-1 transition-transform'
                     /> </a>
 
@@ -115,7 +120,7 @@ export default function Intro() {
                 >
                     <BsLinkedin />
                 </a>
-                <a href="https://github.com/chavanparth/"
+                <a href="https://github.com/chavanparth01"
                     target="_blank"
                     className='bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full text-[1.5rem] hover:scale-110  active:scale-95 transition ease-in duration: 150 outline-none border border-black/20'
                     onClick={ () => sound ? playSound("/Sounds/clicksound2.wav") : null } 

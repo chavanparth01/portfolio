@@ -12,10 +12,10 @@ import useSectionInView from '../lib/Hooks/Hooks';
 export default function Experience() {
   
   const { isDark } = useTheme();
-  const ref = useSectionInView("Experience" , 0.5); 
+  const ref = useSectionInView("Experience" , 0.25); 
 
   return (
-    <div ref = { ref }>
+    <div id="experience" ref = { ref } className="scroll-mt-28">
       <SectionHeading>My Experience</SectionHeading>
 
       <VerticalTimeline lineColor=''>

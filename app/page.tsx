@@ -14,7 +14,8 @@ import Footer from "./Components/Footer";
 
 export const metadata: Metadata = {
   title: "Parth Chavan | Portfolio",
-  description: "Parth Chavan is a Frontend developer with 2 years of experience",
+  description:
+    "Parth Chavan is a Full-Stack & AI Developer and final-year IT student at IIIT Allahabad.",
   icons : {
     icon : "/portfolio.png",
 

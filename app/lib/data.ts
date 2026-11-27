@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaPython, FaUsers } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
 export const links = [
@@ -32,40 +32,58 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "10th Grade - Good Shepherd Academy",
-    location: "Chalisgaon, MH",
+    title: "Research Intern - IIIT Allahabad",
+    location: "Prayagraj, UP",
     description:
-      "I completed my 10th grade from Good Shepherd Academy, laying a strong foundation for my education.",
+      "Architected and deployed a full-stack reporting tool using Python, Streamlit, and Pandas to automate EU carbon compliance (CBAM) benchmarking against Indian BRSR filings, with a dynamic ReportLab ESG scorecard engine deployed on Streamlit Community Cloud.",
+    icon: React.createElement(FaPython),
+    date: "May 2026 - Jul 2026",
+    style: { background: "#fff", color: "#3776AB", outline: "none" },
+  },
+  {
+    title: "Overall Coordinator - Aparoksha Techfest",
+    location: "Prayagraj, UP",
+    description:
+      "Managed event scheduling, outreach, and execution for IIIT Allahabad's annual techfest, facilitating coding competitions and technical events for 2,000+ participants.",
+    icon: React.createElement(FaUsers),
+    date: "Jan 2026 - Apr 2026",
+    style: { background: "#fff", color: "#FF5722", outline: "none" },
+  },
+  {
+    title: "Coordinator, Web Development Wing - GDG IIITA",
+    location: "Prayagraj, UP",
+    description:
+      "Led the Web Development Wing at Google Developer Group IIITA and mentored 50+ students in core web development through hands-on workshops and collaborative projects.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Oct 2024 - Present",
+    style: { background: "#fff", color: "#EA4335", outline: "none" },
+  },
+  {
+    title: "B.Tech in Information Technology - IIIT Allahabad",
+    location: "Prayagraj, UP",
+    description:
+      "Pursuing B.Tech in IT (CGPA: 8.30). Flipkart GRID 7.0 National Semi-Finalist, LeetCode 1990+ (Top 2%), CodeChef 2000+ (5-Star), and Codeforces 1700+ (Expert).",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "Aug 2023 - Jun 2027",
     style: { background: "#fff", color: "#FFC107", outline: "none" },
   },
   {
     title: "12th Grade - GVPM Highschool",
     location: "Chalisgaon, MH",
     description:
-      "I pursued my 12th grade from GVPM Highschool, focusing on science and technology.",
+      "Completed 12th grade from GVPM Highschool, focusing on science and technology.",
     icon: React.createElement(LuGraduationCap),
     date: "2021",
     style: { background: "#fff", color: "#FFC107", outline: "none" },
   },
   {
-    title: "Front-End",
-    location: "Praygraj, UP",
+    title: "10th Grade - Good Shepherd Academy",
+    location: "Chalisgaon, MH",
     description:
-      "I am currently an active member of GDSC IIITA, contributing to web development projects and enhancing my skills in frontend and full-stack development.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2024 - present",
-    style: { background: "#fff", color: "#FF5722", outline: "none" },
-  },
-  {
-    title: "Full-Stack Web Developer (React, Next.js)",
-    location: "Prayagraj, UP",
-    description:
-      "I am familiar with React and Next.js, having built several full-stack web applications that showcase my skills in developing responsive, dynamic, and efficient web solutions.",
-    icon: React.createElement(FaReact),
-    date: "2023 - present",
-    style: { background: "#fff", color: "#61DAFB", outline: "none" }
+      "Completed 10th grade from Good Shepherd Academy, laying a strong foundation for my education.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2019",
+    style: { background: "#fff", color: "#FFC107", outline: "none" },
   },
 ] as const;
 
@@ -102,17 +120,37 @@ export const skillsData = [
   "Redux",
   "Next.js",
   "Node.js",
-  // "REST API",
-  "Express",
+  "Express.js",
+  "Flask",
+  "Streamlit",
   "WebSockets",
+  "WebRTC",
+  "PostgreSQL",
+  "MySQL",
   "MongoDB",
-  "Git/GitHub",
-  "Tailwind",
+  "SQLite",
+  "FAISS",
+  "Firebase",
+  "SQL",
+  "PL/SQL",
+  "Docker",
+  "AWS EC2",
+  "Linux",
+  "CI/CD",
+  "Git / GitHub",
+  "GitHub Actions",
+  "LLMs (Ollama / Groq)",
+  "OpenAI SDK",
+  "Pandas",
+  "Tailwind CSS",
+  "ShadCN/UI",
   "Framer Motion",
   "Material-UI",
   "Bootstrap",
+  "Postman",
+  "Cloudinary",
   "C",
   "C++",
   "Java",
-  "Python"
+  "Python",
 ] as const;

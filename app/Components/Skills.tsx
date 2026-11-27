@@ -70,7 +70,7 @@ export default function Skills() {
     );
 
     return (
-        <div ref={ref}>
+        <div id="skills" ref={ref} className="scroll-mt-28">
             <SectionHeading>
                 My Skills
             </SectionHeading>

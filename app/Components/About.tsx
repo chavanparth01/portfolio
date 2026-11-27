@@ -10,7 +10,7 @@ export default function About() {
     const ref = useSectionInView("About", 0.8); 
     return ( 
         <>
-            <div ref={ref} className="bg-slate-50 text-gray-700 text-center text-3xl m-0 p-0">
+            <div id="about" ref={ref} className="bg-slate-50 text-gray-700 text-center text-3xl m-0 p-0 scroll-mt-28">
                 <TextEffect />
             </div>
             <MacbookScroll
